@@ -2,6 +2,12 @@ link:
 https://testautomationu.applitools.com/js-playwright-tutorial/
 
 ---------
+initialise folder (prevents prompting for data during playwright install):
+npm init -y
+
+install playwright:
+npm i -D playwright
+
 
 
 
