@@ -8,6 +8,7 @@ npm init -y
 install playwright:
 npm i -D playwright
 
-
+execute script:
+node [name of script].js
 
 
