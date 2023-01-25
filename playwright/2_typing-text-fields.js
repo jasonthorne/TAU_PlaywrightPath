@@ -17,7 +17,7 @@ const {chromium} = require ('playwright');
     //code to type in email text box:
 
     //get hndle on email text box element:
-    const email = await page.$('#email'); //++++++++passing id of element
+    const email = await page.$('#email'); //++++++++passing id of element (or can use a selector - right click > copy selector)
     //type into text box:
     await email.type('myEmail@mail.com', {delay: 50}); //+++++++adding obj with delay of 50ms to simulate user interaction
     
