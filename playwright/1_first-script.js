@@ -12,7 +12,15 @@ const {chromium} = require ('playwright');
     const page = await browser.newPage();
     //navigate page to google.com:
     await page.goto('http://google.com');
+
+    //------------------------
+
+
+
+    //------------------------
+
    //finally, close browser:
    await browser.close();
 })();
+
 
