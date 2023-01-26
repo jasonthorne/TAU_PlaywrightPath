@@ -10,7 +10,7 @@ const {chromium} = require ('playwright');
     const browser = await chromium.launch({headless:false, slowMo: 400}); //allow head, and give slowmode of 400ms
     //create a page to exist within the browser:
     const page = await browser.newPage();
-    //navigate page to google.com:
+    //navigate page to site:
     await page.goto('http://google.com');
 
     //------------------------
