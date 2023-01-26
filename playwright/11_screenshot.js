@@ -11,9 +11,11 @@ const {chromium} = require ('playwright');
     //create a page to exist within the browser:
     const page = await browser.newPage();
     //navigate page to site:
-    await page.goto('https://google.com');
+    await page.goto('https://applitools.com');
 
     //------------------------
+
+    //take screenshot code:
 
 
 
