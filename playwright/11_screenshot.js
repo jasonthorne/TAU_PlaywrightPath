@@ -7,7 +7,7 @@ const {chromium} = require ('playwright');
 //async arrow function, that calls itself:
 (async()=>{
     //create and launch a browsr (REMEMER the await - needed as were inside an async function):
-    const browser = await chromium.launch({headless:false, slowMo: 400}); //allow head, and give slowmode of 400ms
+    const browser = await chromium.launch(); //headless mode (by default)
     //create a page to exist within the browser:
     const page = await browser.newPage();
     //navigate page to site:
@@ -15,9 +15,15 @@ const {chromium} = require ('playwright');
 
     //------------------------
 
-    //take screenshot code:
+    //take screenshot, passing it path:
+    await page.screenshot({path: './screenshots/screenshot.png'});
 
+    //take screenshot of just an element:
+    const logoScreenshot = await page.$('.logo'); //passing .logo element
+    await logoScreenshot.screenshot({path: './screenshots/logo.png'});
 
+    //take screenshot of whole page (not just whats shown on screen):
+    await page.screenshot({path: './screenshots/fullPage.png', fullPage: true});
 
     //------------------------
 
