@@ -21,6 +21,8 @@ THEN nav to package.json:
 change ["test": "echo"] to ["test": "jest"]
 
 
+test with jest (nav to test file):
+npm test
 
 ==========
 

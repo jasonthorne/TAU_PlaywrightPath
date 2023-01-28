@@ -2,7 +2,7 @@
 const {chromium} = require('playwright'); //use playwright with chromium
 
 //describe log, which holds all of our tests:
-describe('UI tests for bookstore using playwright', async()=>{
+describe('UI tests for bookstore using playwright', ()=>{
 
     // different tess: beforeAll(), afterAll(), beforeEach(), afterEach()
     //+++++++++++++++jest expects docs:
@@ -11,6 +11,7 @@ describe('UI tests for bookstore using playwright', async()=>{
     let browser = null;
     let page = null;
     let context = null;
+    let firstRowCells = null; //for storing elements found in the first row of a list
 
     //before all testsL
     beforeAll(async() =>{
@@ -40,15 +41,30 @@ describe('UI tests for bookstore using playwright', async()=>{
         await page.fill('#searchBox', 'eloquent javascript'); //fill searchbox with 'eloquent javascript'
     });
 
-    let firstRowCells = null; //for storing elements found in the first row of a list
+   
 
     test("should check if book image is okay", async() =>{
-        //fill array with elements of first row in list
-        firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1)');
+        //fill array with elements of first row in list:
+        //////firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1)');
+        firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1) > div');
+        //now get image from first pos in array:
+        let imgUrl = await firstRowCells[0].$('img');
+        //test that the sorce of the image isn't null:
+        expect(await imgUrl.getAttribute('src').not.toBeNull());
+        
+
     });
 
     test("should check if title is okay", async() =>{
+        expect(await firstRowCells[1].innerText()).toBe('Eloquent JavaScript, Second Edition');
+    });
 
+    test("should check if author is okay", async() =>{
+        expect(await firstRowCells[2].innerText()).toBe('Marijn Haverbeke');
+    });
+
+    test("should check if publisher is okay", async() =>{
+        expect(await firstRowCells[3].innerText()).toBe('No Starch Press');
     });
 
      //---------------------------------------------------------
