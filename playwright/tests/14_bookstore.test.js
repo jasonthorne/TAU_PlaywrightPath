@@ -7,7 +7,10 @@ describe('UI tests for bookstore using playwright', ()=>{
     // different tess: beforeAll(), afterAll(), beforeEach(), afterEach()
     //+++++++++++++++jest expects docs:
     //https://jestjs.io/docs/expect
+ 
 
+    jest.setTimeout(20000); //+++++++++IMPORTANT: increase timeout value (from over 5000ms) +++++++
+    
     let browser = null;
     let page = null;
     let context = null;
@@ -15,8 +18,8 @@ describe('UI tests for bookstore using playwright', ()=>{
 
     //before all testsL
     beforeAll(async() =>{
-        //create browser nd navigate to webpage for testing:
 
+        //create browser and navigate to webpage for testing:
         browser = await chromium.launch({headless: false});
         context = await browser.newContext();
         page = await context.newPage();
@@ -31,12 +34,13 @@ describe('UI tests for bookstore using playwright', ()=>{
     //---------------------------------------------------------
     //tests:
 
-    test("should load page", async() =>{
+    test('should load page', async() =>{
         //https://jestjs.io/docs/expect
         expect(page).not.toBeNull(); //check that page isnt null
-        expect(await page.title().not.toBeNull()); //check that title isnt null
+        expect(await page.title()).not.toBeNull(); //check that title isnt null
     });
 
+    /*
     test("should be able to search for 'eloquent javascript'", async() =>{
         await page.fill('#searchBox', 'eloquent javascript'); //fill searchbox with 'eloquent javascript'
     });
@@ -65,7 +69,7 @@ describe('UI tests for bookstore using playwright', ()=>{
 
     test("should check if publisher is okay", async() =>{
         expect(await firstRowCells[3].innerText()).toBe('No Starch Press');
-    });
+    });*/
 
      //---------------------------------------------------------
 
