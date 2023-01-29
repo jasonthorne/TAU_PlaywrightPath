@@ -40,33 +40,40 @@ describe('UI tests for bookstore using playwright', ()=>{
         expect(await page.title()).not.toBeNull(); //check that title isnt null
     });
 
-    /*
     test("should be able to search for 'eloquent javascript'", async() =>{
         await page.fill('#searchBox', 'eloquent javascript'); //fill searchbox with 'eloquent javascript'
     });
 
    
-
     test("should check if book image is okay", async() =>{
         //fill array with elements of first row in list:
-        //////firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1)');
-        firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1) > div');
+        //firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1)');
+        //firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-tbody > div:nth-child(1) > div');
+        firstRowCells = await page.$$('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.books-wrapper > div.ReactTable.-striped.-highlight > div.rt-table');
         //now get image from first pos in array:
         let imgUrl = await firstRowCells[0].$('img');
         //test that the sorce of the image isn't null:
-        expect(await imgUrl.getAttribute('src').not.toBeNull());
+        expect(await imgUrl.getAttribute('src')).not.toBeNull();
         
 
     });
 
     test("should check if title is okay", async() =>{
-        expect(await firstRowCells[1].innerText()).toBe('Eloquent JavaScript, Second Edition');
+        //expect(await firstRowCells[1].innerText()).toBe('Eloquent JavaScript, Second Edition');
+       // expect(await firstRowCells[1].$('#see-book-Eloquent JavaScript, Second Edition"').innerText()).toBe('Eloquent JavaScript, Second Edition');
+
+        expect(await firstRowCells).toHaveLength(1);
+
+        let title = await page.$('a');
+        expect(await title.innerText()).toBe('Eloquent JavaScript, Second Edition');
     });
 
+    /*
     test("should check if author is okay", async() =>{
         expect(await firstRowCells[2].innerText()).toBe('Marijn Haverbeke');
     });
 
+    
     test("should check if publisher is okay", async() =>{
         expect(await firstRowCells[3].innerText()).toBe('No Starch Press');
     });*/
