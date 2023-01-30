@@ -28,6 +28,7 @@ describe('UI tests for bookstore using playwright', ()=>{
 
     //after all tests:
     afterAll(async() =>{
+        await context.close();
         await browser.close();
     });
 

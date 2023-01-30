@@ -1,19 +1,21 @@
 
 const {chromium} = require('playwright'); //use playwright with chromium
+const {ClassicRunner, Eyes, Target, RectangleSize} = require("@applitools/eyes-playwright"); //++++++++++++ Applitools imports
+
 
 //describe log, which holds all of our tests:
 describe('UI tests for dynamic contnt using playwright & applitools', ()=>{
 
-    // different tess: beforeAll(), afterAll(), beforeEach(), afterEach()
-    //+++++++++++++++jest expects docs:
-    //https://jestjs.io/docs/expect
- 
-
-    jest.setTimeout(20000); //+++++++++IMPORTANT: increase timeout value (from over 5000ms) +++++++
-    
+    jest.setTimeout(30000); //+++++++++IMPORTANT: increase timeout value (from over 5000ms) +++++++
     let browser = null;
     let page = null;
     let context = null;
+
+    //------------
+    //applitools consts:
+    const eyes = new Eyes(new ClassicRunner()); //create eyes
+
+    //-----------
    
     //before all testsL
     beforeAll(async() =>{
@@ -27,6 +29,7 @@ describe('UI tests for dynamic contnt using playwright & applitools', ()=>{
 
     //after all tests:
     afterAll(async() =>{
+        await context.close();
         await browser.close();
     });
 
@@ -34,6 +37,18 @@ describe('UI tests for dynamic contnt using playwright & applitools', ()=>{
     //tests:
 
     test('should look okay', async() =>{
+
+        //wait for h3 selector to be attched to the DOM:
+        await page.waitForSelector('h3', {state: 'attached'});
+
+        //this method atarts a test, and must be called BEFORE any other chck method:
+        await eyes.open(page, 'The internet', 'Dynamic content', new RectangleSize(800, 600)); //(driver, appName, testName, viewportSize) RectngleSize(H px, W px)
+
+        //check full window 
+        await eyes.check(Target.window().fully());
+
+        //close eyes:
+        await eyes.close();
         
     });
 
