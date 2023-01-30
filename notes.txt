@@ -48,6 +48,13 @@ https://help.applitools.com/hc/en-us/articles/360006914732-The-runner-key-API-Ke
 install aplitools dependency (in playwright folder):
 npm i -D @applitools/eyes-playwright
 
+==========
+
+install playwrights CLI (for generating scripts) (change Target to 'Library' to get .js code intead of .test code):
+npx playwright codegen [url to site]
+
+
+
 
 
 
