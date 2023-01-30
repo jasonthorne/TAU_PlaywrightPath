@@ -6,7 +6,7 @@ const {ClassicRunner, Eyes, Target, RectangleSize} = require("@applitools/eyes-p
 //describe log, which holds all of our tests:
 describe('UI tests for dynamic contnt using playwright & applitools', ()=>{
 
-    jest.setTimeout(30000); //+++++++++IMPORTANT: increase timeout value (from over 5000ms) +++++++
+    jest.setTimeout(50000); //+++++++++IMPORTANT: increase timeout value (from over 5000ms) +++++++
     let browser = null;
     let page = null;
     let context = null;

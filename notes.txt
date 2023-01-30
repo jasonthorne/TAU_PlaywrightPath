@@ -42,6 +42,9 @@ https://applitools.com/
 temporarily add key (nav to playwright folder):
 set APLITOOLS_API_KEY = <>
 
+OR add it to envirnoment variables:
+https://help.applitools.com/hc/en-us/articles/360006914732-The-runner-key-API-Key-
+
 install aplitools dependency (in playwright folder):
 npm i -D @applitools/eyes-playwright
 
