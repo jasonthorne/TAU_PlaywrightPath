@@ -6,7 +6,7 @@ class BasePage{
 
     //navigate method (adds path to url for navigation):
     async navigate(path){
-        await this.page.goto('https://demo.applitools.com/${path}');
+        await this.page.goto(`https://demo.applitools.com/${path}`);
     }
 }
 

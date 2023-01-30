@@ -27,6 +27,3 @@ class LoginPage extends BasePage {
 
 //export class as module:
 module.exports = LoginPage;
-
-
-

@@ -11,6 +11,11 @@ class HomePage extends BasePage {
         this.balances = '.balance-value';
     }
 
+    async getUserName(){
+        let userName = await this.page.$(this.loggedUser);
+        return await userName.innerText();
+    }
+
     async getBalance(balanceType){
         //grab all elements in .balance-value:
         let balArray = await this.page.$$(this.balances);
@@ -34,3 +39,6 @@ class HomePage extends BasePage {
         await super.navigate('app.html');
     }
 }
+
+//exort class as module:
+module.exports = HomePage;
