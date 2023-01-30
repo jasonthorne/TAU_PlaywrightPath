@@ -25,6 +25,7 @@ test with jest (nav to test file):
 npm test
 
 ==========
+local pull error:
 
   Looks like Playwright Test or Playwright was just installed or updated. ║
 ║ Please run the following command to download new browsers:              ║
@@ -33,8 +34,17 @@ npm test
 ║                                                                         ║
 ║ <3 Playwright Team    
 
-
-
 ==========
+
+aplitools:
+https://applitools.com/
+
+temporarily add key (nav to playwright folder):
+set APLITOOLS_API_KEY = <>
+
+install aplitools dependency (in playwright folder):
+npm i -D @applitools/eyes-playwright
+
+
 
 
