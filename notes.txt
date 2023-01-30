@@ -24,6 +24,13 @@ change ["test": "echo"] to ["test": "jest"]
 test with jest (nav to test file):
 npm test
 
+add ignore files for jest:
+under "scripts" in package.json, add:
+
+"jest":{
+    "testPathIgnorePatterns":["path to file to ignore", "and another etc.."]
+},
+
 ==========
 local pull error:
 
@@ -52,6 +59,10 @@ npm i -D @applitools/eyes-playwright
 
 install playwrights CLI (for generating scripts) (change Target to 'Library' to get .js code intead of .test code):
 npx playwright codegen [url to site]
+
+
+
+
 
 
 
