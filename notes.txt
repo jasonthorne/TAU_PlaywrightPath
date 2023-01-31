@@ -33,14 +33,8 @@ under "scripts" in package.json, add:
 
 ==========
 local pull error:
-
-  Looks like Playwright Test or Playwright was just installed or updated. ║
-║ Please run the following command to download new browsers:              ║
-║                                                                         ║
-║     npx playwright install                                              ║
-║                                                                         ║
-║ <3 Playwright Team    
-
+download new browsers:            
+npx playwright install                                                                                                                      
 ==========
 
 aplitools:
