@@ -1,2 +1,15 @@
 Learning path:
 https://testautomationu.applitools.com/learningpaths.html
+
+docs:
+https://playwright.dev/docs/intro
+
+init playwright folder:
+npm init playwright@latest
+
+open playwright folder in vs code:
+code .
+
+playwright vs extension:
+Playwright Test for VS Code
+
