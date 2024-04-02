@@ -20,4 +20,13 @@ npx playwright test
 show report:
 npx playwright show-report
 
+add test scripts:
+package.json > scripts
+
+run test script:
+npm run [test script name]
+
 vid - 2.2
+
+package.json issue:
+https://stackoverflow.com/questions/49056000/all-of-my-json-files-have-problems-loading-reference-schema-from-schemastore-az
