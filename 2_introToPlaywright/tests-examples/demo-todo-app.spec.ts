@@ -21,7 +21,7 @@ test.describe('New Todo', () => {
 
     // Make sure the list only has one todo item.
     await expect(page.getByTestId('todo-title')).toHaveText([
-      TODO_ITEMS[1] //changed to fail test
+      TODO_ITEMS[1] //changed to fail test +++++++++
     ]);
 
     // Create 2nd todo.
