@@ -1,4 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
+import { HomePage } from '../pages/home-page' //import home page obj
 
 /*Cleaned up version of example.spec.ts + my-first-test.spec.ts, 
 using AAA pattern:*/
@@ -9,24 +10,29 @@ is where each key section odf a page (header, body, fotter)
 is made into its own object, with its own tests ran within it. 
 */
 
+let homePage: HomePage; //create var of type HomePage
+
 const URL = 'https://playwright.dev/';
 
 test.beforeEach(async({page})=>{
     await page.goto(URL);
+    homePage = new HomePage(page); //instaniate homepage, passing it page obj
 });
 
 //click the 'get started' link:
 async function clickGetStarted(page:Page){
-    await page.getByRole('link', {name: 'Get started'}).click();
+    //await page.getByRole('link', {name: 'Get started'}).click(); - NEW WAY:
+    await homePage.clickGetStarted();
 }
 
 //--------------------------------------------------------------
 
 test.describe('Playwright website', () => {
 
-    test('has title', async ({ page }) => {
+    test('has title', async () => {
         // Expect a title "to contain" a substring.
-        await expect(page).toHaveTitle(/Playwright/);
+        //await expect(page).toHaveTitle(/Playwright/);
+        await homePage.assertPageTitle();
     });
       
     test('get started link', async ({ page }) => {
