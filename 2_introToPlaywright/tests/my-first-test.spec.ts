@@ -11,7 +11,7 @@ import { test, expect } from '@playwright/test';
 */
 
 //NOTE - .only() is for running only the tests with .only() applied to them ++++++++
-test.only('check java page', async ({page}) =>{
+test/*.only*/('check java page', async ({page}) =>{
 
     //1 - open te page
     await page.goto('https://playwright.dev');

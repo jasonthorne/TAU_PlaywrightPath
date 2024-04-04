@@ -33,18 +33,18 @@ async function clickGetStarted(page:Page){
 
 test.describe('Playwright website', () => {
 
-    test('has title', async () => {
+    test('@example2 - has title', async () => {
         // Expect a title "to contain" a substring
         //await expect(page).toHaveTitle(/Playwright/);
         await homePage.assertPageTitle();
     });
       
-    test('get started link', async ({ page }) => {
+    test('@example2 - get started link', async ({ page }) => {
         await clickGetStarted(page); // Click the get started link
         await topMenuPage.assertPageUrl(pageUrl);
     });
     
-    test('check java page', async ({page}) =>{
+    test('@example2 - check java page', async ({page}) =>{
         
         //using steps to section out the Act and Assert steps - NOTE ++++
 
