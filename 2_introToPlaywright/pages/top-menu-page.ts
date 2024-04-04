@@ -19,4 +19,26 @@ export class TopMenuPage {
         this.javaLabel = page.getByText(this.javaDesc/*, {exact: true}*/);
     }
 
+    async hoverNode(){
+        await this.nodeLink.hover();
+    }
+
+    async clickJava(){
+        await this.javaLink.click();
+    }
+
+    async assertPageUrl(pageUrl: RegExp){
+        await expect(this.page).toHaveURL(pageUrl);
+    }
+
+    async assertNodeDescNotVisible(){
+        await expect(this.nodeLabel).not.toBeVisible();
+    }
+
+    async assertJavaDescVisible(){
+        await expect(this.javaLabel).toBeVisible();
+    }
+
 }
+
+export default TopMenuPage;
