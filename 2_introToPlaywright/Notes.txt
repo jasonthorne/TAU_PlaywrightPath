@@ -15,7 +15,6 @@ code .
 playwright vs extension:
 Playwright Test for VS Code
 
-
 run playwright test:
 npx playwright test
 
