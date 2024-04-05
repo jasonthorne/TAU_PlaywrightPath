@@ -1,4 +1,4 @@
-vid - 4
+vid - 5
 
 Learning path:
 https://testautomationu.applitools.com/learningpaths.html

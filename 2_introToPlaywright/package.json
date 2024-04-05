@@ -6,7 +6,8 @@
   "scripts": {
     "test:e2e": "npx playwright test tests/",
     "test:e2e:example2": "npx playwright test tests/ --grep @example2",
-    "test:e2e:example3": "npx playwright test example3-applitools-visual.spec.ts --project=chromium"
+    "test:e2e:example3": "npx playwright test example3-applitools-visual.spec.ts --project=chromium",
+    "test:e2e:example4": "npx playwright test example4-applitools-site.spec.ts --project=chromium"
   },
   "keywords": [],
   "author": "",
