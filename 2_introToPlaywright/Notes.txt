@@ -1,4 +1,4 @@
-vid - 3.2
+vid - 4
 
 Learning path:
 https://testautomationu.applitools.com/learningpaths.html
@@ -28,5 +28,13 @@ package.json > scripts
 run test script:
 npm run [test script name]
 
-package.json issue:
+package.json issue: - FIXED
 https://stackoverflow.com/questions/49056000/all-of-my-json-files-have-problems-loading-reference-schema-from-schemastore-az
+
+
+Applitools for visual testing (amongst other things):
+https://auth.applitools.com/users/choose-product
+TOne!
+
+install applitoolos in project on command line:
+npm i -D @applitools/eyes-playwright

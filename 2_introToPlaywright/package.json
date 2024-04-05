@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": { 
+  "scripts": {
     "test:e2e": "npx playwright test tests/",
-    "test:e2e:example2": "npx playwright test tests/ --grep @example2"
+    "test:e2e:example2": "npx playwright test tests/ --grep @example2",
+    "test:e2e:example3": "npx playwright test tests/ --grep @example3"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@applitools/eyes-playwright": "^1.26.1",
     "@playwright/test": "^1.42.1",
     "@types/node": "^20.12.2"
   },
